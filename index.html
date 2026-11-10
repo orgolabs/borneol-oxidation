@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oxidation of Borneol to Camphor — Bleach / Acetic Acid</title>
+  <meta name="description" content="An interactive, fact-checked walkthrough of the oxidation of borneol to camphor with sodium hypochlorite (bleach) in acetic acid: real 3D structures, the hypochlorous-acid mechanism, the lab procedure, and a live yield calculator. Week 1 of an oxidation&ndash;reduction sequence." />
+  <link rel="icon" href="https://orgolabs.github.io/shared/brand/orgolabs-icon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="stylesheet" href="https://orgolabs.github.io/shared/styles.css" />
+</head>
+<body>
+  <noscript><p style="padding:24px">This interactive lab needs JavaScript. Source: <a href="https://github.com/orgolabs/borneol-oxidation">github.com/orgolabs/borneol-oxidation</a></p></noscript>
+
+  <script>
+    window.LAB = {
+      repo: "borneol-oxidation",
+      labName: "Borneol Oxidation",
+      eyebrow: "Interactive organic chemistry · oxidation & multi-step sequence",
+      title: "The Oxidation of Borneol to Camphor",
+      lede: "The secondary alcohol <strong>borneol</strong> is oxidized to the ketone <strong>camphor</strong> using <strong>sodium hypochlorite</strong> (household bleach) in <strong>acetic acid</strong> — a safer, “greener” alternative to toxic chromium oxidants. Rotate the real molecules, follow the hypochlorous-acid mechanism, and scale the experiment below.",
+      reaction: "\\ce{C10H18O ->[NaOCl][AcOH] C10H16O}",
+      content: "content.md",
+      viewers: [
+        { id: "view-borneol", key: "borneol", kind: "start", role: "Substrate (2° alcohol)", name: "Borneol",
+          iupac: "(1R,2S,4R)-1,7,7-trimethylbicyclo[2.2.1]heptan-2-ol", note: "A <b>secondary alcohol</b>: the C2 carbon carries the –OH and one H. Removing both (an oxidation) gives the C=O of camphor." },
+        { id: "view-camphor", key: "camphor", kind: "major", role: "Product (ketone)", name: "Camphor",
+          iupac: "(1R,4R)-1,7,7-trimethylbicyclo[2.2.1]heptan-2-one", note: "The <b>ketone</b>: C2 is now a carbonyl (C=O). Two hydrogens have been lost relative to borneol." },
+        { id: "view-isoborneol", key: "isoborneol", kind: "minor", role: "Next step →", name: "Isoborneol",
+          iupac: "(1R,2R,4R)-1,7,7-trimethylbicyclo[2.2.1]heptan-2-ol", note: "Not formed here. It is the <b>product of reducing camphor</b> &mdash; the sequence's next step, done in the sibling <a href='https://orgolabs.github.io/camphor-reduction/'>camphor-reduction</a> lab." }
+      ],
+      pathway: [
+        { node: { img: "borneol.png", name: "Borneol", sub: "$\\ce{C10H18O}$ · 2° alcohol" } },
+        { op: { cond: "\\ce{NaOCl}", sub: "AcOH · 40–50 °C" } },
+        { node: { img: "camphor.png", name: "Camphor", sub: "$\\ce{C10H16O}$ · ketone", kind: "major" } }
+      ],
+      pathwayCaption: "Bleach and acetic acid generate <strong>hypochlorous acid</strong> ($\\ce{HOCl}$) in situ, the active oxidant that converts the secondary alcohol borneol into the ketone camphor (net loss of $\\ce{H2}$).",
+      calculator: {
+        intro: "Pre-filled with the manual's amounts: <strong>0.360 g borneol</strong> (the limiting reagent; bleach is used in excess). Molar masses: borneol 154.25, camphor 152.23 g/mol. The product is <em>lighter</em> than the substrate — oxidation removes $\\ce{H2}$, so even a perfect 100% conversion gives less mass than you started with.",
+        inputs: [
+          { id: "in-bor", label: "Borneol mass (g)", value: "0.360", step: "0.01" },
+          { id: "in-isolated", label: "Isolated camphor mass (g)", value: "0.28", step: "0.01", optional: true }
+        ],
+        outputs: [
+          { id: "o-bormmol", label: "Borneol", unit: "mmol" },
+          { id: "o-theory", label: "Theoretical camphor", unit: "g", kind: "major" },
+          { id: "o-yield", label: "Percent yield", unit: "%", kind: "yield" }
+        ],
+        compute: function (v) {
+          var B = 154.25, C = 152.23;
+          if (!(v["in-bor"] > 0)) return {};
+          var n = v["in-bor"] / B * 1000, theory = n / 1000 * C;
+          var o = {
+            "o-bormmol": n.toFixed(2),
+            "o-theory": theory.toFixed(3)
+          };
+          o["o-yield"] = v["in-isolated"] > 0 ? (v["in-isolated"] / theory * 100).toFixed(1) : "";
+          return o;
+        }
+      },
+      references: [
+        { authors: "Course handout (adapted)", title: "Oxidation of Borneol to Camphor (bleach/acetic acid)", meta: "Part of an oxidation–reduction multi-step sequence; adapted from West Virginia University Chem 339 and Pavia et al.", note: "The bundled procedure for this experiment: the micro-scale bleach/acetic-acid oxidation, with melting-point, IR and NMR characterization.", url: "docs/borneol-oxidation-lab-manual.pdf", linkText: "Download the lab handout (PDF)", access: "open" },
+        { authors: "Pavia, D. L.; Lampman, G. M.; Kriz, G. S.; Engel, R. G.", title: "Introduction to Organic Laboratory Techniques", meta: "3rd ed.; Saunders College Publishing, 1990.", note: "The procedure's textbook source for hypochlorite oxidation of secondary alcohols.", access: "paywall" },
+        { authors: "PubChem, U.S. National Library of Medicine.", title: "Borneol (CID 6552009), Camphor (CID 159055), Isoborneol (CID 6321405)", meta: "Public-domain compound records in the natural (1R,4R) series.", note: "Free and public. The 3D coordinates come directly from these defined-stereochemistry records.", url: "https://pubchem.ncbi.nlm.nih.gov/compound/159055", linkText: "pubchem.ncbi.nlm.nih.gov/compound/159055", access: "open" },
+        { authors: "Rego, N.; Koes, D.", title: "3Dmol.js: molecular visualization with WebGL", meta: "Bioinformatics 2015, 31 (8), 1322–1324.", note: "The open-source (BSD-3) library rendering the interactive structures.", url: "https://doi.org/10.1093/bioinformatics/btu829", linkText: "doi.org/10.1093/bioinformatics/btu829", access: "open" }
+      ]
+    };
+  </script>
+  <script src="js/structures.js"></script>
+  <script src="https://orgolabs.github.io/shared/lab.js"></script>
+</body>
+</html>
