@@ -8,7 +8,7 @@ The oxidant is **sodium hypochlorite** ($\ce{NaOCl}$) — ordinary household ble
 
 ## 1 · 3D structures
 
-These are **real geometries** from PubChem (not sketches): drag to rotate, scroll to zoom. Compare **borneol** (an –OH and an H on C2) with its oxidation product **camphor** (a C=O at C2). **Isoborneol** is shown for context — it is where the sequence goes *next*, when camphor is reduced. All three share the same (1R,4R) bicyclic cage, so only the C2 position changes.
+These are **real geometries** from PubChem (not sketches): drag to rotate, scroll to zoom. Compare **borneol** (an –OH and an H on C2) with its oxidation product **camphor** (a $\ce{C=O}$ at C2). **Isoborneol** is shown for context — it is where the sequence goes *next*, when camphor is reduced. All three share the same (1R,4R) bicyclic cage, so only the C2 position changes.
 
 <div data-mount="viewers"></div>
 
@@ -29,7 +29,7 @@ Bleach alone is a sluggish oxidant. Adding **acetic acid** converts hypochlorite
 </article>
 <article class="mech-step minor-accent"><span class="step-num">3</span>
 <h3>E2-like elimination → ketone</h3>
-<p>A base removes the <strong>C2–H</strong> while the <strong>O–Cl</strong> bond breaks, chloride ($\ce{Cl-}$) leaving. Those two departures, anti and concerted like an <strong>E2</strong>, forge the C=O double bond of <strong>camphor</strong>. Net: borneol loses $\ce{H2}$ (as effectively $\ce{H+}$ and $\ce{Cl-}$ + the O–H hydrogen) and is oxidized to the ketone.</p>
+<p>A base removes the <strong>C2–H</strong> while the <strong>O–Cl</strong> bond breaks, chloride ($\ce{Cl-}$) leaving. Those two departures, anti and concerted like an <strong>E2</strong>, forge the $\ce{C=O}$ double bond of <strong>camphor</strong>. Net: borneol loses $\ce{H2}$ (as effectively $\ce{H+}$ and $\ce{Cl-}$ + the O–H hydrogen) and is oxidized to the ketone.</p>
 </article>
 </div>
 
@@ -82,7 +82,7 @@ This is the micro-scale **Week 1** procedure from the bundled course handout. Al
 5. Fit an **air condenser**.
 6. Set the flask in a **water bath at 45 °C**, and keep the temperature in the **40–50 °C** window throughout *(important — too hot and the bleach decomposes and acetone/MTBE flash off)*.
 7. **Stir until the borneol fully dissolves** (add **0.5 mL more acetone** if needed).
-8. Add **6.0 mL sodium hypochlorite solution dropwise over ~35 min**, down through the air condenser.
+8. Add **6.0 mL sodium hypochlorite solution dropwise over ≈35 min**, down through the air condenser.
 9. After the addition is complete, **stir for 15 min more**.
 
 ### Work-up (isolating camphor)
@@ -99,7 +99,7 @@ This is the micro-scale **Week 1** procedure from the bundled course handout. Al
 
 17. **Weigh** the product and calculate the **yield** and **percent yield** (calculator below).
 18. Determine the **melting point** — pure racemic camphor melts at **174 °C**.
-19. Record the **IR** and **NMR** spectra — look for loss of the broad O–H band and the appearance of a strong ketone $\ce{C=O}$ stretch (~1740 cm⁻¹).
+19. Record the **IR** and **NMR** spectra — look for loss of the broad O–H band and the appearance of a strong ketone $\ce{C=O}$ stretch (≈1740 cm⁻¹).
 
 <div class="safety"><strong>Safety:</strong> <strong>sodium hypochlorite</strong> (bleach) is corrosive and oxidizing — never mix it with acid in an uncontrolled way (risk of toxic $\ce{Cl2}$ gas); here the acetic acid is added to the substrate, and bleach is metered in slowly. <strong>Glacial acetic acid</strong> is corrosive with pungent vapor — use a fume hood. <strong>Acetone and MTBE are highly flammable</strong> — no flames or ignition sources. Keep the water bath at <strong>40–50 °C</strong>. Wear goggles and gloves. <strong>Waste:</strong> set aside the aqueous layer per the hood's instructions; organic waste goes to the organic-solvents container; dispose of everything per your lab's procedures.</div>
 
